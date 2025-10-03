@@ -50,9 +50,34 @@
 
     <main class="main-content" id="main-content">
         <div class="container justify-content-center text-center">
-            <h1>Nous contacter</h1>
-        </div>
+            <div class="row">
+                <h1 class="text-center">Nous contacter</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="card">
+                    <form>
+                        <h2>Veuillez remplir ce formulaire</h2>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Addresse mail</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+                            <div id="emailHelp" class="form-text">Nous ne partagerons jamais votre adresse mail avec qui que ce soit.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Sujet</label>
+                            <input type="text" class="form-control" id="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label><br>
+                            <textarea id="message" name="message" rows="4" cols="50" required>
+                                Votre message ici...
+                            </textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
+                </div>
+           </div>
 
+        </div>
 
     </main>
         
