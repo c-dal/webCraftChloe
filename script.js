@@ -42,11 +42,13 @@ function displayProjectInfo(projet) {
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="modal${projet.id}Label">Modal title</h1>
+                            <h1 class="modal-title fs-5" id="modal${projet.id}Label">${projet.title} - Pour ${projet.client}</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            Tous les détails ! 
+                            <i class="bi bi-calendar-check"> ${projet.year} - ${projet.duration}</i> <br>
+                            
+                            Tous les détails !  et la liste des fonctionnalités
                         </div>
                         <div class="modal-footer">
                             <a href="${projet.url}"> <button type="button" class="btn btn-primary">Voir le site</button> </a>
