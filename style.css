@@ -10,18 +10,20 @@
     --my-primary-color: rgb(250, 182, 45);
     --my-secondary-color: rgb(95, 194, 165);
     --my-text-color: rgb(68, 86, 108);
+    --small-space: 1rem;
+    --big-space: 2rem;
 }
 
 /* Styles de base pour mobile (320px+) */
 .container {
   width: 100%;
-  padding: 1rem;
+  padding: var(--small-space);
 }
 
 .grid {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--small-space);
 }
 
 /* Tablette (768px+) */
@@ -40,7 +42,7 @@
 @media screen and (min-width: 1024px) {
   .container {
     max-width: 100%;
-    padding: 2rem;
+    padding: var(--big-space);
   }
 
   section .grid {
@@ -83,8 +85,8 @@
   box-shadow: 10px 10px 5px var(--my-secondary-color);
   max-width: 40rem;
   align-items: center;
-  margin: 20px;
-  padding: 10px;
+  margin: var(--big-space);
+  padding: var(--small-space);
   transition: all 0.3s ease;
 }
 
@@ -104,4 +106,29 @@
 .btn-success {
     background: var(--my-secondary-color);
     border-color: var(--my-secondary-color);
+}
+
+@keyframes apparitionBG {
+    from {background-color: white;}
+    to {background-color: var(--my-primary-color);}
+}
+
+@keyframes appear {
+    from {opacity: 0}
+    to {opacity: 100%}
+}
+
+.hero {
+    animation-name: apparitionBG;
+    animation-duration: 6s;
+} 
+
+.hero-text {
+    animation-name: appear;
+    animation-duration: 3s;
+} 
+
+#portfolio {
+    animation-name: appear;
+    animation-duration: 5s;
 }
