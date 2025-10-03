@@ -46,9 +46,13 @@ function displayProjectInfo(projet) {
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
+                            <i class="bi bi-bookmark"> ${projet.category} </i> <br>
                             <i class="bi bi-calendar-check"> ${projet.year} - ${projet.duration}</i> <br>
-                            
-                            Tous les détails !  et la liste des fonctionnalités
+                            ${projet.description} <br>
+                            <i class="bi bi-tag"> Fonctionnalités : </i>
+                            <ul>
+                                ${projet.features.map(feature => `<li>${feature}</li>`).join('')}
+                            </ul>
                         </div>
                         <div class="modal-footer">
                             <a href="${projet.url}"> <button type="button" class="btn btn-primary">Voir le site</button> </a>
