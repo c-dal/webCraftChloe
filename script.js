@@ -21,17 +21,39 @@ function displayProjectInfo(projet) {
         container.innerHTML = `
             <div class="project-card card">
                 <img src="${projet.image}" alt="${projet.title}" class="card-img-top img">
-                <div class="projet-details">
+                <div class="projet-details card-body">
                     <h2>${projet.title}</h2>
                     <p class="overview">
-                        client, technos, bouton détails <br>
+                        Pour ${projet.client} <br>
                         ${badges}
                     </p>
-                    </p>
 
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal${projet.id}">
+                        Afficher détails
+                    </button>
                 </div>
             </div>
         `;
+
+        // Modal
+        document.body.insertAdjacentHTML('beforeend', 
+            `<div class="modal fade" id="modal${projet.id}" tabindex="-1" aria-labelledby="modal${projet.id}Label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modal${projet.id}Label">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Tous les détails ! 
+                        </div>
+                        <div class="modal-footer">
+                            <a href="${projet.url}"> <button type="button" class="btn btn-primary">Voir le site</button> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>`);
     }
 }
 
@@ -41,10 +63,8 @@ function displayProjects(projets) {
         projets.forEach(projet => {
             const node = document.createElement("article");
             containerPortfolio.appendChild(node);
-            console.log("coucou j'ai cree un container");
-            console.log(`Je suis le projet ${projet.title}`);
             node.setAttribute("id", projet.id);
-            node.setAttribute("class", "col-12 col-md-6 col-lg-4 mb-4");
+            node.setAttribute("class", "grid col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center");
             displayProjectInfo(projet)
         });
     }
