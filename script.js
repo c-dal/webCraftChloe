@@ -59,6 +59,7 @@ function displayProjectInfo(projet) {
 
 function displayProjects(projets) {
     let containerPortfolio = document.getElementById("portfolio");
+    containerPortfolio.innerHTML = ""; // Retirer les affichages existants
     if (containerPortfolio) {
         projets.forEach(projet => {
             const node = document.createElement("article");
@@ -79,7 +80,8 @@ async function loadProjects() {
 
     try {
         // Afficher le loader
-        loader.style.display = 'block';
+        loader.style.opacity = '100%';
+        loader.style.animation = 'spin 2s linear infinite';
         errorMessage.style.display = 'none';
 
         // Requête AJAX
@@ -95,7 +97,8 @@ async function loadProjects() {
 
         // Utiliser les données
         displayProjects(data.projects);
-        //populateTechnologyFilter(data.technologies);
+        console.log('technologies:', data.technologies);
+        populateTechnologyFilter(data.technologies);
 
     } catch (error) {
         // Gérer l'erreur
@@ -105,13 +108,10 @@ async function loadProjects() {
 
     } finally {
         // Cacher le loader dans tous les cas
-        loader.style.display = 'none';
+        loader.style.opacity = '0';
+        loader.style.animation = 'none';
     }
 }
-
-// Charger au démarrage
-document.addEventListener('DOMContentLoaded', loadProjects);
-
 
 async function loadProjectsByTechnology(tech) {
     try {
@@ -137,5 +137,27 @@ async function loadProjectsByTechnology(tech) {
     }
 }
 
-// Exemple d'utilisation
-// loadProjectsByTechnology('React'); // Charge tous les projets React
+function populateTechnologyFilter(technologies) {
+    const filterContainer = document.querySelector('.filtres');
+    if (filterContainer) {
+        filterContainer.innerHTML = ""; 
+        technologies.forEach(tech => {
+            const button = document.createElement('button');
+            button.textContent = tech;
+            button.className = 'btn btn-info';
+            filterContainer.appendChild(button);
+            button.onclick = () => loadProjectsByTechnology(tech);
+            console.log(button);
+        })
+        const allButton = document.createElement('button');
+        allButton.textContent = "Réinitialiser";
+        allButton.className = 'btn btn-secondary';
+        allButton.style.width = '120px';
+        filterContainer.appendChild(allButton);
+        allButton.onclick = () => loadProjects();
+    }
+}
+
+
+// Charger au démarrage
+document.addEventListener('DOMContentLoaded', async () => {await(loadProjects());});

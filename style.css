@@ -108,6 +108,16 @@
     border-color: var(--my-secondary-color);
 }
 
+.btn-info {
+    background: var(--my-primary-color);
+    border-color: var(--my-primary-color);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 @keyframes apparitionBG {
     from {background-color: white;}
     to {background-color: var(--my-primary-color);}
@@ -116,6 +126,17 @@
 @keyframes appear {
     from {opacity: 0}
     to {opacity: 100%}
+}
+
+#loader {
+    border: 16px solid var(--my-primary-color); 
+    border-top: 16px solid var(--my-secondary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    display: block;
+    opacity: 100%;
 }
 
 .hero {
