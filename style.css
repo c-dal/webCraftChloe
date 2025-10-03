@@ -4,9 +4,12 @@
 *::before,
 *::after {
     box-sizing: border-box;
-    --my-primary-color: (250, 182, 45);
-    --my-secondary-color: (95, 194, 165);
-    --my-text-color: (68, 86, 108);
+}
+
+:root {
+    --my-primary-color: rgb(250, 182, 45);
+    --my-secondary-color: rgb(95, 194, 165);
+    --my-text-color: rgb(68, 86, 108);
 }
 
 .visually-hidden {
@@ -36,3 +39,29 @@
     height: auto;
 }
 
+.hero {
+    background-color: var(--my-primary-color);
+}
+
+.card {
+  box-shadow: 10px 10px 5px var(--my-secondary-color);
+  flex: 1 1 18rem;
+  max-width: 40rem;
+  align-items: center;
+  margin: 20px;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.badge {
+    margin : 5px;
+}
+
+.img {
+    max-width: 100%;
+}
