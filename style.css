@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/* Normalisation des styles par défaut */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    --my-primary-color: (250, 182, 45);
+    --my-secondary-color: (95, 194, 165);
+    --my-text-color: (68, 86, 108);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-link {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+}
+

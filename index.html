@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebCraft Solutions</title>
+    <meta name="description" content="Plateforme de streaming">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Lien d'évitement pour aller directement au contenu -->
+    <a class="skip-link" href="#main-content">
+        Aller directement au contenu principal
+    </a>
+
+    <div id="loader"></div>
+    <div id="error"></div>
+
+    <header class="site-header" role="banner">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">
+                <h1> <a href="/"><img src="logoWebCraft.jpeg" alt="Logo showing a briefcase" width="50" height="50" style="vertical-align:middle"></a> WebCraft Solutions </h1>
+            </span>
+            <button class="navbar-toggler" type="btn button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">A propos</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <form class="d-flex" role="search" aria-label="Recherche de profuits">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <div id="search-help" class="visually-hidden">
+                    Saisissez le nom du produit recherché puis appuyez sur Entrée
+                </div>
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+        </nav>
+    </header>
+
+    <main class="main-content" id="main-content">
+        <section class="hero">
+            <div class="container justify-content-center text-center">
+                <h2>Bienvenue chez WebCraft Solutions</h2>
+                <h3>Votre plateforme de solutions de développement web et mobile</h3>
+                <p>Ici, vous pourrez consulter tous nos exemples de projets clients, et les filtrer par technologie pour trouver exactement ce que vous cherchez !</p>
+            </div>
+        </section>
+
+    </main>
+        
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <span class="text-muted">© 2025 Web Craft Solutions, Inc</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a></li>
+        <li class="ms-3"><a class="text-muted" href="https://x.com/"><i class="bi bi-twitter-x"></i></a></li>
+        <li class="ms-3"><a class="text-muted" href="https://fr-fr.facebook.com/"><i class="bi bi-facebook"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+    <script src="script.js"></script> 
+</body>
+</html>
